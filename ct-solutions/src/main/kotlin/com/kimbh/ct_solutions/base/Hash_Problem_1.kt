@@ -30,16 +30,12 @@ package com.kimbh.ct_solutions.base
  * 예제 #3
  * "mislav"는 참여자 명단에는 두 명이 있지만, 완주자 명단에는 한 명밖에 없기 때문에 한명은 완주하지 못했습니다.*/
 
-class Hash_Problem_1030 {
+class Hash_Problem_1 {
     fun solution(participant: Array<String>, completion: Array<String>): String {
-        val mutableListCompltion = completion.sorted().toMutableList()
-        return participant.sorted().find {
-            if (mutableListCompltion.contains(it)) {
-                mutableListCompltion.removeFirst()
-                false
-            } else {
-                true
-            }
-        } ?: ""
+        val sortParticipant = participant.sorted()
+        completion.sorted().forEachIndexed { index, name ->
+            if (name != sortParticipant[index]) return name
+        }
+        return sortParticipant.last()
     }
 }
