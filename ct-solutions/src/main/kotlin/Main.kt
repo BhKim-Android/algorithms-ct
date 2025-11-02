@@ -1,12 +1,28 @@
-import com.kimbh.ct_solutions.base.Hash_Problem_4
+import com.kimbh.ct_solutions.problems.BFS.Baekjoon_bfs_1102_03
+import com.kimbh.ct_solutions.problems.BFS.Programmers_bfs_1101_01
 
-// [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]
-// [["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]]
+//  maps	        answer
+//  [1,0,1,1,1]     11
+//  [1,0,1,0,1]
+//  [1,0,1,1,1]
+//  [1,1,1,0,1]
+//  [0,0,0,0,1]
+
+//  [1,0,1,1,1]     -1
+//  [1,0,1,0,1]
+//  [1,0,1,1,1]
+//  [1,1,1,0,0]
+//  [0,0,0,0,1]
 fun main() {
-    val problem = Hash_Problem_4()
-    val result1 = problem.solution(arrayOf(arrayOf("yellow_hat", "headgear"), arrayOf("blue_sunglasses", "eyewear"), arrayOf("green_turban", "headgear")))
-    val result2 = problem.solution(arrayOf(arrayOf("crow_mask", "face"), arrayOf("blue_sunglasses", "face"), arrayOf("smoky_makeup", "face")))
-
-    println("result1 : $result1")
-    println("result2 : $result2")
+    val problem = Baekjoon_bfs_1102_03()
+    val answer = problem.solution(
+        arrayOf(
+            intArrayOf(1, 0, 1, 1, 1),
+            intArrayOf(1, 0, 1, 0, 1),
+            intArrayOf(1, 0, 1, 1, 1),
+            intArrayOf(1, 1, 1, 1, 1),
+            intArrayOf(0, 0, 0, 0, 1)
+        )
+    )
+    println("answer : $answer")
 }
